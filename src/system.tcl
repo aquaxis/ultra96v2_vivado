@@ -960,9 +960,10 @@ proc create_root_design { parentCell } {
   set_property PFM.AXI_PORT {S01_AXI {memport "MIG" sptag "" memory ""} S02_AXI {memport "MIG" sptag "" memory ""} S03_AXI {memport "MIG" sptag "" memory ""} S04_AXI {memport "MIG" sptag "" memory ""} M01_AXI {memport "MIG" sptag "" memory ""} M02_AXI {memport "MIG" sptag "" memory ""} M03_AXI {memport "MIG" sptag "" memory ""} M04_AXI {memport "MIG" sptag "" memory ""} M05_AXI {memport "MIG" sptag "" memory ""} M06_AXI {memport "MIG" sptag "" memory ""} M07_AXI {memport "MIG" sptag "" memory ""}} [get_bd_cells /smartconnect_0]
   set_property PFM.IRQ {In0 {} In1 {} In2 {} In3 {} In4 {} In5 {} In6 {} In7 {}} [get_bd_cells /xlconcat_0]
   set_property PFM.AXI_PORT {M_AXI_HPM0_FPD {memport "M_AXI_GP" sptag "" memory ""} M_AXI_HPM1_FPD {memport "M_AXI_GP" sptag "" memory ""} S_AXI_HPC0_FPD {memport "S_AXI_HPC" sptag "" memory ""} S_AXI_HPC1_FPD {memport "S_AXI_HPC" sptag "" memory ""} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory ""} S_AXI_HP1_FPD {memport "S_AXI_HP" sptag "" memory ""}} [get_bd_cells /zynq_ultra_ps_e_0]
-  set_property PFM.CLOCK {pl_clk0 {id "1" is_default "true" proc_sys_reset "/proc_sys_reset_0" status "fixed"}} [get_bd_cells /zynq_ultra_ps_e_0]
+  set_property PFM.CLOCK {pl_clk0 {id "0" is_default "true" proc_sys_reset "/proc_sys_reset_0" status "fixed"}} [get_bd_cells /zynq_ultra_ps_e_0]
 
 
+  validate_bd_design
   save_bd_design
 }
 # End of create_root_design()
@@ -973,7 +974,4 @@ proc create_root_design { parentCell } {
 ##################################################################
 
 create_root_design ""
-
-
-common::send_msg_id "BD_TCL-1000" "WARNING" "This Tcl script was generated from a block design that has not been validated. It is possible that design <$design_name> may result in errors during validation."
 
