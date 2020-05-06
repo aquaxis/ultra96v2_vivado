@@ -2,10 +2,17 @@ all: create_design
 
 create_design:
 	vivado -mode batch -source create_design.tcl -log log_create_design.log
+
+create_fsbl:
 	xsct create_fsbl.tcl
 	cp fsbl/executable.elf ./fsbl.elf
 	git clone https://github.com/Xilinx/device-tree-xlnx.git -b xilinx-v2019.2
+
+create_dts:
 	xsct create_dts.tcl
+
+create_pfm:
+	xsct create_pfm.tcl
 
 clean:
 	rm -rf *.jou *.log *.str *.dcp *.mcs *.prm *.bit
@@ -16,4 +23,6 @@ clean:
 	rm -rf fsbl drivers
 	rm -rf dts device-tree-xlnx
 	rm -rf nohup.out
+	rm -rf ultra96v2_platform
+	rm -rf fsbl.elf
 
