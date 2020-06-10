@@ -1,4 +1,4 @@
-all: create_design create_fsbl download_dts create_dts create_pfm
+all: create_design create_fsbl download_dts create_dts
 
 create_design:
 	vivado -mode batch -source create_design.tcl -log log_create_design.log
