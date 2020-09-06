@@ -16,10 +16,11 @@ source src/${block_name}.tcl
 # Create IP
 generate_target all [get_files ${project_name}/${project_name}.srcs/sources_1/bd/${block_name}/${block_name}.bd]
 set listips [create_ip_run [get_files -of_objects [get_fileset sources_1] ${project_name}/${project_name}.srcs/sources_1/bd/${block_name}/${block_name}.bd]]
-# multiple job for create ip(YowaYowa PC)
+# multiple job for create ip(YowaYowa PC), number less than ...
 launch_runs -jobs 4 ${listips}
-# multiple job for create ip(TusyoTsuyo PC)
-# launch_runs -jobs 16 ${listips}foreach {ips} [lsort -decreasing $listips] {
+# multiple job for create ip(TusyoTsuyo PC), number more than ...
+# launch_runs -jobs 16 ${listips}
+foreach {ips} [lsort -decreasing $listips] {
     wait_on_run ${ips}
 }
 
