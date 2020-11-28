@@ -1,5 +1,8 @@
 # Ultra96V2 Vivado Project for Vitis
 
+* Xilinx Vivado 2020.2
+* Yocto Project gatesgarth(3.2)
+
 ## Download
 
 ```txt
