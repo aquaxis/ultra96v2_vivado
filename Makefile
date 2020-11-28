@@ -1,4 +1,4 @@
-all: create_design
+all: create_design create_fsbl download_dts create_dts
 
 create_design:
 	vivado -mode batch -source create_design.tcl -log log_create_design.log
@@ -6,7 +6,9 @@ create_design:
 create_fsbl:
 	xsct create_fsbl.tcl
 	cp fsbl/executable.elf ./fsbl.elf
-	git clone https://github.com/Xilinx/device-tree-xlnx.git -b xilinx-v2019.2
+
+download_dts:
+	git clone https://github.com/Xilinx/device-tree-xlnx.git -b xilinx-v2020.2
 
 create_dts:
 	xsct create_dts.tcl
