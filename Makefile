@@ -8,7 +8,7 @@ create_fsbl:
 	cp fsbl/executable.elf ./fsbl.elf
 
 download_dts:
-	git clone https://github.com/Xilinx/device-tree-xlnx.git -b xilinx-v2020.1
+	git clone https://github.com/Xilinx/device-tree-xlnx.git -b xilinx-v2020.2
 
 create_dts:
 	xsct create_dts.tcl

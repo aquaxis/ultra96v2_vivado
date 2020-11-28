@@ -29,7 +29,7 @@ foreach {ips} [lsort -decreasing $listips] {
 
 # make wrapper
 make_wrapper -files [get_files ${project_name}/${project_name}.srcs/sources_1/bd/${block_name}/${block_name}.bd] -top
-read_verilog ${project_name}/${project_name}.srcs/sources_1/bd/${block_name}/hdl/${block_name}_wrapper.v
+read_verilog ${project_name}/${project_name}.gen/sources_1/bd/${block_name}/hdl/${block_name}_wrapper.v
 
 # set top
 set_property top ${block_name}_wrapper  [current_fileset]

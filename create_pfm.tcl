@@ -1,5 +1,5 @@
 set yocto_path "/home/hidemi/yocto/yocto_dunfell/build_ultra96v2"
-set sdk_path   "/opt/poky/3.1.1_ultra96v2"
+set sdk_path   "/opt/poky/3.2_ultra96v2"
 
 platform create -name "ultra96v2_platform" -hw ./ultra96v2.xsa -out ./ -no-boot-bsp -proc psu_cortexa53 -os linux
 
