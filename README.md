@@ -18,7 +18,7 @@ $ source /opt/Xilinx/Vivado/2020.2/settings64.sh
 $ make
 ```
 
-### Create binary
+## Create binary
 
 * ultra96v2.xsa
 * fsbl.elf
